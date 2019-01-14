@@ -1,0 +1,72 @@
+﻿@model Merkato.Lib.ViewModels.EditUserViewModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="col-md-6">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Edit User</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" asp-action="Edit">
+            <div class="box-body">
+                <div class="col-md-10">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    @*<div class="form-group">
+                        <label asp-for="UserName">UserName</label>
+                        <input asp-for="UserName" class="form-control" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>*@
+                    <div class="form-group">
+                        <label asp-for="Email">Email</label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ApplicationRoleId">Role</label>
+                        <select asp-for="ApplicationRoleId" asp-items="@Model.ApplicationRoles" class="form-control">
+                            <option>Please select one</option>
+                        </select>
+                        <span asp-validation-for="ApplicationRoleId" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <a class="btn btn-default" asp-action="Index">Back to List</a>
+                <button type="submit" class="btn btn-info pull-right">Save</button>
+            </div>
+            <!-- /.box-footer -->
+        </form>
+    </div>
+</div>
+@*<div class="row">
+    <d class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="col-lg-3 col-sm-3 control-label"></label>
+                <div class="col-lg-6">
+                    <input asp-for="UserName" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="col-lg-3 col-sm-3 control-label"></label>
+                <div class="col-lg-6">
+                    <input asp-for="Email" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ApplicationRoleId" class="col-lg-3 col-sm-3 control-label"></label>
+                <div class="col-lg-6">
+                    <select asp-for="ApplicationRoleId" asp-items="@Model.ApplicationRoles" class="form-control">
+                        <option>Please select</option>
+                    </select>
+                </div>
+            </div>   
+    </form>
+</div>*@

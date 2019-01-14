@@ -1,0 +1,107 @@
+﻿@model Merkato.Lib.ViewModels.UserViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="col-md-6">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Create User</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" asp-action="Create">
+            <div class="box-body">
+                <div class="col-md-10">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    @*<div class="form-group">
+                        <label asp-for="UserName">UserName</label>
+                        <input asp-for="UserName" class="form-control" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>*@
+                    <div class="form-group">
+                        <label asp-for="Email">Email</label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password">Password</label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ConfirmPassword">ConfirmPassword</label>
+                        <input asp-for="ConfirmPassword" class="form-control" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ApplicationRoleId">Role</label>
+                        <select asp-for="ApplicationRoleId" asp-items="@Model.ApplicationRoles" class="form-control">
+                            <option>Please select one</option>
+                        </select>
+                        <span asp-validation-for="ApplicationRoleId" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <a class="btn btn-default" asp-action="Index">Back to List</a>
+                <button type="submit" class="btn btn-info pull-right">Save</button>
+            </div>
+            <!-- /.box-footer -->
+        </form>
+    </div>
+</div>
+@*<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <div class="col-lg-6">
+                    <input asp-for="UserName" class="form-control" />
+                </div>
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <div class="col-lg-6">
+                    <input asp-for="Email" class="form-control" />
+                </div>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicationRoleId" class="control-label"></label>
+                <div class="col-lg-6">
+                    <select asp-for="ApplicationRoleId" asp-items="@Model.ApplicationRoles" class="form-control">
+                        <option>Please select</option>
+                    </select>
+                    <span asp-validation-for="ApplicationRoleId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <div class="col-lg-6">
+                    <input asp-for="Password" class="form-control" />
+                </div>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <div class="col-lg-6">
+                    <input asp-for="ConfirmPassword" class="form-control" />
+                </div>
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>*@
+
+
+

@@ -1,0 +1,37 @@
+﻿@model Merkato.Lib.ViewModels.AgentReportViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="well col-md-12">
+        <div class="col-md-4">
+            <div class="form-group">
+                <div class="col-md-4">
+                    <label for="DepartmentId" class="control-label col-md-4">Department</label>
+                </div>
+                <div class="col-md-8">
+                    <select asp-for="DepartmentId" asp-items="@Model.DepartmentList" class="form-control">
+                        <option>select Department</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <div class="col-md-4">
+                    <label for="Gender" class="control-label col-md-4">Gender</label>
+                </div>
+                <div class="col-md-8">
+                    <select asp-for="Gender" asp-items="@Model.GenderList" class="form-control">
+                        <option>select Gender</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

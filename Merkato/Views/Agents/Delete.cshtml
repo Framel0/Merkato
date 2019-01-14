@@ -1,0 +1,340 @@
+﻿@model Merkato.Lib.Models.Agent
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmpCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MiddleName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SurName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SurName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dob)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dob)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CurrentAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartmentId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DepartmentId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.JobTitleId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.JobTitleId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportTo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ReportTo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PayrollNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PayrollNo)
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Pmsrelative)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pmsrelative)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PmsrelativeName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PmsrelativeName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PmsrelativeRelationship)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PmsrelativeRelationship)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nssfno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nssfno)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nhifno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nhifno)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pinno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pinno)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstPictureUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstPictureUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NssfcardPictureUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NssfcardPictureUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NhifcardPictureUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NhifcardPictureUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PincertificatePictureUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PincertificatePictureUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPictureUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdPictureUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MainBankId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MainBankId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BankBranchId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BankBranchId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AccountName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AccountNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MaritalStatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaritalStatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NbDependants)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NbDependants)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ResidentialAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ResidentialAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonalEmail)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PersonalEmail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeEmergencyContactName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeEmergencyContactName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeEmergencyContactResidential)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeEmergencyContactResidential)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeEmergencyContactNearestPlace)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeEmergencyContactNearestPlace)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeEmergencyContactCellPhone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeEmergencyContactCellPhone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeEmergencyContactAlternativeEmail)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeEmergencyContactAlternativeEmail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PrimaryEmergencyContactName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PrimaryEmergencyContactName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PrimaryEmergencyContactRelationship)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PrimaryEmergencyContactRelationship)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PrimaryEmergencyContactPlaceOfWork)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PrimaryEmergencyContactPlaceOfWork)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PrimaryEmergencyContactPhone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PrimaryEmergencyContactPhone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PrimaryEmergencyContactEmail)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PrimaryEmergencyContactEmail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondaryEmergencyContactName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SecondaryEmergencyContactName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondaryEmergencyContactRelationship)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SecondaryEmergencyContactRelationship)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondaryEmergencyContactPlaceOfWork)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SecondaryEmergencyContactPlaceOfWork)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondaryEmergencyContactPhone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SecondaryEmergencyContactPhone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondaryEmergencyContactEmail)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SecondaryEmergencyContactEmail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ExistingMedicalHistory)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ExistingMedicalHistory)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PmsstaffWhoKnowsYourHouse)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PmsstaffWhoKnowsYourHouse)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherInformations)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OtherInformations)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Supervisor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Supervisor)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

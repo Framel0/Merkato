@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Merkato</name>
+    </assembly>
+    <members>
+        <member name="T:Merkato.Lib.Models.ApiResult`1">
+            <summary>
+            Api REsult
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Merkato.Lib.Models.ApiResult`1.Successfull">
+            <summary>
+            Successfull or not (0 or 1)
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.ApiResult`1.Error">
+            <summary>
+            If not sucessfull,show this error message
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.ApiResult`1.InternalError">
+            <summary>
+            Internal for debuggint
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.ApiResult`1.Model">
+            <summary>
+            Model to be returned
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.EmailNotificationScheduler.Mode">
+            <summary>
+            Le mode d'execution du processus de notification
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.EmailNotificationScheduler.Interval">
+            <summary>
+            Si le mode est INTERVAL alors cette valeur indique 
+            l'interval d'execution du processus de notification.
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.EmailNotificationScheduler.ScheduledTime">
+            <summary>
+            Si le mode est DAY alors cette valeur indique l'heure à laquel 
+            le processusde notification va s'executer.
+            </summary>
+        </member>
+        <member name="T:Merkato.Lib.Models.MerkatoDbContext">
+            <summary>
+            Database Context Controller
+            </summary>
+        </member>
+        <member name="M:Merkato.Lib.Models.MerkatoDbContext.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Merkato.Lib.Models.MerkatoDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Merkato.Lib.Models.MerkatoDbContext})">
+            <summary>
+            
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.ActiveList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.ActivityAssignment">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.Agent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.AgentAvailability">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.AgentAvailabilityDetails">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.AgentGrade">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.AgentSelfRating">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.AgentStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.Bank">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.BankBranch">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.Batch">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.Client">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.ClientProduct">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.ClientRating">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.ClientRequest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.ClientRequestDetails">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.Company">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.Currency">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.Department">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.Dependant">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.Education">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.Gender">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.History">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.Invoice">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.JobRating">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.JobTitle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.LanguageProficiency">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.Location">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.MaritalStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.Mechanism">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.Outlet">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.OutletRating">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.Parameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.PerformanceAppraisal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.Models.MerkatoDbContext.ProductMechanism">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Merkato.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Merkato.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Merkato.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Merkato.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Merkato.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="P:Merkato.Lib.ViewModels.AgentAccountingViewModel.StatusString">
+            <summary>
+            The new field that will show the status
+            </summary>
+        </member>
+        <member name="T:Merkato.Lib.ViewModels.AgentSmallViewModel">
+            <summary>
+            Agent minimum View Model
+            </summary>
+        </member>
+        <member name="P:Merkato.Lib.ViewModels.AgentSmallViewModel.StatusString">
+            <summary>
+            The new field that will show the status
+            </summary>
+        </member>
+    </members>
+</doc>

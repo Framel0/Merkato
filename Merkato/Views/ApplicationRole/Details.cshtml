@@ -1,0 +1,64 @@
+﻿@model Merkato.Lib.ViewModels.ApplicationRoleViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="col-md-6">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Edit Role</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" asp-action="Details">
+            <div class="box-body">
+                <div class="col-md-10">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label asp-for="RoleName">RoleName</label>
+                        <input asp-for="RoleName" class="form-control" />
+                        <span asp-validation-for="RoleName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description">Description</label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                </div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <a class="btn btn-default" asp-action="Index">Back to List</a>
+                <button type="submit" class="btn btn-info pull-right">Save</button>
+            </div>
+            <!-- /.box-footer -->
+        </form>
+    </div>
+</div>
+
+@*<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Details">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RoleName" class="control-label"></label>
+                <input asp-for="RoleName" class="form-control" />
+                <span asp-validation-for="RoleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>*@
+
+
+

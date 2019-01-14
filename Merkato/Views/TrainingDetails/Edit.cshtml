@@ -1,0 +1,90 @@
+﻿@model Merkato.Lib.Models.TrainingDetails
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="col-md-6">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Edit Training</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" asp-action="Edit">
+            <div class="box-body">
+                <div class="col-md-10">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Question" class="control-label"></label>
+                        <input asp-for="Question" class="form-control" />
+                        <span asp-validation-for="Question" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AnswerValues" class="control-label">Answer Values</label>
+                        <input asp-for="AnswerValues" class="form-control" />
+                        <span asp-validation-for="AnswerValues" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AnswerPoint" class="control-label">Answer Point</label>
+                        <input asp-for="AnswerPoint" class="form-control" />
+                        <span asp-validation-for="AnswerPoint" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AnswerCorrect" class="control-label">Correct Answer</label>
+                        <input asp-for="AnswerCorrect" class="form-control" />
+                        <span asp-validation-for="AnswerCorrect" class="text-danger"></span>
+                    </div>
+                    <div class="form-group hidden">
+                        <label asp-for="TrainingId" class="control-label"></label>
+                        <input asp-for="TrainingId" class="form-control" />
+                        <span asp-validation-for="TrainingId" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <a class="btn btn-default" asp-action="Index" asp-controller="TrainingDetails" asp-route-id="@ViewBag.TrainingId">Back to List</a>
+                <button type="submit" class="btn btn-info pull-right">Save</button>
+            </div>
+            <!-- /.box-footer -->
+        </form>
+    </div>
+</div>
+
+@*<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Question" class="control-label"></label>
+                <input asp-for="Question" class="form-control" />
+                <span asp-validation-for="Question" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnswerValues" class="control-label"></label>
+                <input asp-for="AnswerValues" class="form-control" />
+                <span asp-validation-for="AnswerValues" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnswerPoint" class="control-label"></label>
+                <input asp-for="AnswerPoint" class="form-control" />
+                <span asp-validation-for="AnswerPoint" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnswerCorrect" class="control-label"></label>
+                <input asp-for="AnswerCorrect" class="form-control" />
+                <span asp-validation-for="AnswerCorrect" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+

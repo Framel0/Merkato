@@ -1,0 +1,66 @@
+﻿@model Merkato.Lib.Models.ClientRequest
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ActivityDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ClientId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OutletId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OutletId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MechanismId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Mechanism)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NbAgentShift1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NbAgentShift1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NbAgentShift2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NbAgentShift2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NbAgentShift3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NbAgentShift3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NbAgentShift4)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NbAgentShift4)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

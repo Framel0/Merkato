@@ -1,0 +1,42 @@
+﻿@model Merkato.Lib.Models.ClientRating
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ClientRating</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ActivityId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ActivityId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RatingDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RatingDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RatingTypeId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RatingTypeId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Score)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Score)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

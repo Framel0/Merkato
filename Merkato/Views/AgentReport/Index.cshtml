@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+@section Scripts{
+    <script src="~/Scripts/AgentReport/AgentReportViewModel.js"></script>
+}
+
+
+<div class="panel-body" data-bind="with: AgentReportViewModel">
+    @Html.Partial("_Parameter")
+</div>
+
+
+
+
+

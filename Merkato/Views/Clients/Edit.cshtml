@@ -1,0 +1,280 @@
+﻿@model Merkato.Lib.ViewModels.ClientViewModel
+
+    @{
+        ViewData["Title"] = "Edit";
+    }
+
+    <form asp-action="Edit"
+          asp-controller="Clients"
+          method="post"
+          class="form-horizontal">
+        <div class="col-md-12">
+            <div class="form-group col-md-8">
+
+                <div class="col-md-2">
+                    <input type="submit" value="Save" class="btn btn-info btn-block" />
+                </div>
+                <div class="col-md-2">
+                    <a asp-action="Index" class="btn btn-default btn-block">Cancel</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="well col-md-12">
+            <ul class="nav nav-tabs nav-justified">
+                <li class="active"><a data-toggle="tab" href="#bioDataTab">Details</a></li>
+                <li><a data-toggle="tab" href="#personalDetailsTab">Contact</a></li>
+                @*<li><a data-toggle="tab" href="#otherInfoTab">Product/Services</a></li>*@
+            </ul>
+
+            <div class="tab-content">
+                <div id="bioDataTab" class="tab-pane fade in active">
+                    <div class="box box-info">
+                        <div class="box-body">
+                            <div class="form-horizontal">
+                                <hr />
+                                <div class="col-md-12">
+                                    <div class="col-md-6">
+                                        <div class="col-md-11">
+                                            @if (!User.IsInRole("Client"))
+                                            {
+                                                <div class="form-group">
+                                                    <label asp-for="ClientCode" class="control-label">Client Code</label>
+                                                    <input asp-for="ClientCode" class="form-control" placeholder="Client Code" readonly="readonly" />
+                                                    <span asp-validation-for="ClientCode" class="text-danger"></span>
+                                                </div>
+                                            }
+
+                                            <div class="form-group">
+                                                <label asp-for="ClientName" class="control-label">Client Name</label>
+                                                <input asp-for="ClientName" class="form-control" placeholder="Client Name" />
+                                                <span asp-validation-for="ClientName" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label asp-for="Address" class="control-label">Address</label>
+                                                <input asp-for="Address" class="form-control" placeholder="Address" />
+                                                <span asp-validation-for="Address" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-11">
+                                            <div class="form-group">
+                                                <label asp-for="PhoneNumber" class="control-label">Phone No</label>
+                                                <input asp-for="PhoneNumber" class="form-control" placeholder="Phone Number" />
+                                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label asp-for="Email" class="control-label">Email</label>
+                                                <input asp-for="Email" class="form-control" placeholder="Email" />
+                                                <span asp-validation-for="Email" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label asp-for="Status">Status</label>
+                                                <select asp-for="Status" asp-items="@Model.ActiveList" class="form-control">
+                                                    <option>Please select one</option>
+                                                </select>
+                                                <span asp-validation-for="Status" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="personalDetailsTab" class="tab-pane fade">
+
+                    <div class="box box-info">
+                        <div class="box-body">
+                            <hr />
+                            <div class="form-horizontal">
+                                <div class="col-md-12">
+                                    <div class="col-md-6">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading">
+                                                <div class="row">
+                                                    <div class="col col-xs-6">
+                                                        <h3 class="panel-title"><b>First Contact</b></h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-11">
+                                                        <div class="form-group">
+                                                            <label asp-for="FirstContactName" class="control-label">First Contact Name</label>
+                                                            <input asp-for="FirstContactName" class="form-control" placeholder="First Contact Name" />
+                                                            <span asp-validation-for="FirstContactName" class="text-danger"></span>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label asp-for="FirstContactPhone" class="control-label">First Contact Phone</label>
+                                                            <input asp-for="FirstContactPhone" class="form-control" placeholder="First Contact Phone" />
+                                                            <span asp-validation-for="FirstContactPhone" class="text-danger"></span>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label asp-for="FirstContactEmail" class="control-label">First Contact Email</label>
+                                                            <input asp-for="FirstContactEmail" class="form-control" placeholder="First Contact Email" />
+                                                            <span asp-validation-for="FirstContactEmail" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-1"></div>
+                                                </div>
+                                            </div>
+                                            <div class="panel-footer">
+                                                <div class="row">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading">
+                                                <div class="row">
+                                                    <div class="col col-xs-6">
+                                                        <h3 class="panel-title"><b>Second Contact</b></h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-11">
+                                                        <div class="form-group">
+                                                            <label asp-for="SecondContactName" class="control-label">Second Contact Name</label>
+                                                            <input asp-for="SecondContactName" class="form-control" placeholder="Second Contact Name" />
+                                                            <span asp-validation-for="SecondContactName" class="text-danger"></span>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label asp-for="SecondContactPhone" class="control-label">Second Contact Phone</label>
+                                                            <input asp-for="SecondContactPhone" class="form-control" placeholder="Second Contact Phone" />
+                                                            <span asp-validation-for="SecondContactPhone" class="text-danger"></span>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label asp-for="SecondContactEmail" class="control-label">Second Contact Email</label>
+                                                            <input asp-for="SecondContactEmail" class="form-control" placeholder="Second Contact Email" />
+                                                            <span asp-validation-for="SecondContactEmail" class="text-danger"></span>
+                                                        </div>
+                                                        <div class="form-group hidden">
+                                                            <label asp-for="ClientAppUserName">ClientAppUserName</label>
+                                                            <input asp-for="ClientAppUserName" class="form-control" placeholder="ClientAppUserName" />
+                                                            <span asp-validation-for="ClientAppUserName" class="text-danger"></span>
+                                                        </div>
+                                                        <div class="form-group hidden">
+                                                            <label asp-for="ClientAppPassword">ClientAppPassword</label>
+                                                            <input asp-for="ClientAppPassword" class="form-control" placeholder="ClientAppPassword" />
+                                                            <span asp-validation-for="ClientAppPassword" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-1">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel-footer">
+                                                <div class="row">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                @*<div id="otherInfoTab" class="tab-pane fade">
+                    <div class="box box-info">
+                        <div class="box-body">
+                            <hr />
+                            <div class="form-horizontal">
+                                <div class="col-md-12">
+                                    <div class="col-md-12">
+                                        <div class="panel panel-primary panel-table">
+                                            <div class="panel-heading">
+                                                <div class="row">
+                                                    <div class="col col-xs-6">
+                                                        <h3 class="panel-title">Products</h3>
+                                                    </div>
+                                                    <div class="col col-xs-6 text-right">
+                                                        <a asp-action="Create" class="btn btn-sm btn-default btn-create">Create New</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body">
+                                                <table id="datatable" class="table table-striped table-bordered table-list">
+                                                    <thead>
+                                                        <tr class="btn-primary">
+                                                        <tr>
+                                                            <th>
+                                                                Code
+                                                            </th>
+                                                            <th>
+                                                                Name
+                                                            </th>
+                                                            <th>
+                                                                Unit
+                                                            </th>
+                                                            <th>
+                                                                Quantity
+                                                            </th>
+                                                            <th>
+                                                                Price
+                                                            </th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach (var item in Model.Products)
+                                                        {
+                                                            <tr>
+                                                                <td>
+                                                                    @Html.DisplayFor(modelItem => item.ProductCode)
+                                                                </td>
+                                                                <td>
+                                                                    @Html.DisplayFor(modelItem => item.ProductName)
+                                                                </td>
+                                                                <td>
+                                                                    @Html.DisplayFor(modelItem => item.ProductUnit)
+                                                                </td>
+                                                                <td>
+                                                                    @Html.DisplayFor(modelItem => item.Quantity)
+                                                                </td>
+                                                                <td>
+                                                                    @Html.DisplayFor(modelItem => item.Price)
+                                                                </td>
+                                                                <td>
+                                                                    <a title="Edit" asp-action="Edit" asp-route-id="@item.ProductId"><i class="fa fa-pencil"></i></a> |
+                                                                    <a title="Details" class="btn btn-xs btn-info" asp-action="Details" asp-route-id="@item.ProductId"><i class="glyphicon glyphicon-info-sign"></i></a> |
+                                                                    <a title="delete" class="btn btn-xs btn-danger" asp-action="Delete" asp-route-id="@item.ProductId"><i class="fa fa-remove"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="panel-footer">
+                                                <div class="row">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+            </div>
+        </div>
+    </form>
+

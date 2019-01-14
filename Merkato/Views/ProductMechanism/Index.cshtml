@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+@section Scripts{
+    <script>
+        clientId = '@ViewBag.ClientId';
+        console.log('The CLient Id is', clientId);
+
+        mechanismId = '@ViewBag.MechanismId';
+        console.log('The Mechanism Id is', mechanismId);
+
+    </script>
+    <script src="~/Scripts/Mechanism/MechanismViewModel.js"></script>
+}
+
+
+<div class="form-horizontal">
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col col-xs-6">
+                        <h3 class="panel-title"><b>Add New Product</b></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <div class="col-md-12">
+                    <div class="col-md-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">Add Product</h2>
+                            </div>
+
+                            <div class="panel-body">
+                                @Html.Partial("_AddProduct")
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">Product List</h2>
+                            </div>
+                            <div class="panel-body">
+                                @Html.Partial("_ProductList")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <a class="btn btn-default btn-link" asp-action="Index" asp-controller="Mechanism" asp-route-id="@ViewBag.MechanismId"><b>Back to List</b></a>
+
+                </div>
+            </div>
+        </div>
+        @*<div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col col-xs-6">
+                            <h3 class="panel-title"><b>Mechanism List</b></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        @Html.Partial("_MechanismList")
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+
+                    </div>
+                </div>
+            </div>*@
+    </div>
+</div>

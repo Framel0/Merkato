@@ -1,0 +1,81 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<div class="row">
+    <div class="well col-md-12">
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="col-md-4">
+                    <label for="GenderTxt" class="control-label col-md-4">Gender</label>
+                </div>
+                <div class="col-md-8">
+                    <select data-bind="options: Genders,
+                        optionsText: 'name',
+                        optionsValue:'id',
+                        //value: selectedGender,
+                        optionsCaption: 'Choose...'" class="form-control"></select>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="form-group">
+                <div class="col-md-4">
+                    <label for="DeptTxt" class="control-label col-md-4">Marital Status</label>
+                </div>
+                <div class="col-md-8">
+                    <select data-bind="options: MaritalStatus,
+                        optionsText: 'name',
+                        optionsValue:'id',
+                        //value: selectedMaritalStatus,
+                        optionsCaption: 'Choose...'" class="form-control"></select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="col-md-4">
+                    <label for="PayGroupTxt" class="control-label col-md-4">Status</label>
+                </div>
+                <div class="col-md-8">
+                    <select data-bind="options:Status,
+                        optionsText: 'name',
+                        optionsValue:'id',
+                        //value: selectedStatus,
+                        optionsCaption: 'Choose...'" class="form-control"></select>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="col-md-4">
+                    <label for="PayGroupTxt" class="control-label col-md-4">Product</label>
+                </div>
+                <div class="col-md-8">
+                    <select data-bind="options:Products,
+                        optionsText: 'productName',
+                        optionsValue:'id',
+                        //value: SelectedProduct,
+                        optionsCaption: 'Choose...'" class="form-control"></select>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary">Preview</button>
+                </div>
+                <div class="col-md-8">
+                    <div class="input-group">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

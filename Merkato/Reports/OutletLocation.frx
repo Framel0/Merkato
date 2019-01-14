@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="07/17/2018 18:54:43" ReportInfo.Modified="07/27/2018 09:24:57" ReportInfo.CreatorVersion="2018.3.20.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {   
+
+    private void Form1_Load(object sender, EventArgs e)
+    {
+      
+    }
+
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <MsSqlDataConnection Name="OutletDS" ConnectionString="rijcmlqv8nJFtbbl/+HQCYlhi1/QsHUaqtS+89RgUl9WF89dbW3331ZR5MI6sB1PSZbvgu/etGi+v/PXkvkctN1tQDyZW9zszXlYwdc2prE0BfP6XFs2/sFymRGzkaBH8OoP1VBcNFy/3mBtPgl2LKFccbAvJ8uV0VvlHBKGX6QS9Q/n764ugLpEHvBWrOJ8uGniWBhBdT5QoAJjyDkGjTbUDVLtw==">
+      <TableDataSource Name="Table" Alias="OutletLocation" DataType="System.Int32" Enabled="true" SelectCommand="Select L.Id,  L.Name as LocationName, O.Name as Outletname &#13;&#10;From Location L&#13;&#10;Join Outlet O  on O.LocationId=L.Id&#13;&#10;">
+        <Column Name="LocationName" DataType="System.String"/>
+        <Column Name="Outletname" DataType="System.String"/>
+        <Column Name="Id" DataType="System.Int32"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <MsSqlDataConnection Name="ParamDS" ConnectionString="rijcmlqv8nJFtbbl/+HQCYlhi1/QsHUaqtS+89RgUl9WF89dbW3331ZR5MI6sB1PSZbvgu/etGi+v/PXkvkctN1tQDyZW9zszXlYwdc2prE0BfP6XFs2/sFymRGzkaBH8OoP1VBcNFy/3mBtPgl2LKFccbAvJ8uV0VvlHBKGX6QS9Q/n764ugLpEHvBWrOJ8uGniWBhId4VomMFQNFyIE4Rn7S71w==">
+      <TableDataSource Name="Table1" DataType="System.Int32" Enabled="true" SelectCommand="Select Id, Name From Location">
+        <Column Name="Id" DataType="System.Int32"/>
+        <Column Name="Name" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Parameter Name="LocationID" DataType="System.Int32"/>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="56.7">
+      <TextObject Name="Text1" Left="198.45" Top="9.45" Width="330.75" Height="37.8" Text="OUTLET LOCATION" Font="Arial, 24pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="60.7" Width="718.2" Height="18.9">
+      <TextObject Name="Text2" Left="217.35" Width="151.2" Height="18.9" Fill.Color="LightGray" Text="Location"/>
+      <TextObject Name="Text3" Left="368.55" Width="141.75" Height="18.9" Fill.Color="LightGray" Text="Outlet"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="83.6" Width="718.2" Height="28.35" DataSource="Table">
+      <TextObject Name="Text4" Left="217.35" Top="9.45" Width="151.2" Height="18.9" Text="[OutletLocation.LocationName]"/>
+      <TextObject Name="Text5" Left="368.55" Top="9.45" Width="141.75" Height="18.9" Text="[OutletLocation.Outletname]"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="115.95" Width="718.2" Height="18.9"/>
+  </ReportPage>
+  <DialogPage Name="Form1" Width="290" Height="226" AcceptButton="btnOk" CancelButton="btnCancel" LoadEvent="Form1_Load">
+    <ButtonControl Name="btnOk" Left="118" Top="166" Anchor="Bottom, Right" Font="Tahoma, 8pt" TabIndex="0" Text="OK" DialogResult="OK"/>
+    <ButtonControl Name="btnCancel" Left="201" Top="166" Anchor="Bottom, Right" Font="Tahoma, 8pt" TabIndex="1" Text="Cancel" DialogResult="Cancel"/>
+    <LabelControl Name="Label1" Left="64" Top="44" Width="74" Height="13" Font="Tahoma, 8pt" TabIndex="3" Text="LocationName"/>
+    <ComboBoxControl Name="ComboBox1" Left="64" Top="60" Font="Tahoma, 8pt" TabIndex="4" DataColumn="OutletLocation.LocationName" ItemHeight="13"/>
+  </DialogPage>
+</Report>

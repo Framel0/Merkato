@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Merkato.Lib.ViewModels.ClientRequestDetailsViewModel>
+
+@{
+    ViewData["Title"] = "AgentActivities";
+}
+
+<div class="col-md-12">
+    <div class="panel panel-primary panel-table">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col col-xs-6">
+                    <h3 class="panel-title">Agent Activities</h3>
+                </div>
+                <div class="col col-xs-6 text-right">
+                    @*<a asp-action="Create" class="btn btn-sm btn-default btn-create">Create New</a>*@
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <table id="datatable" class="table table-striped table-bordered table-list">
+                <thead>
+                    <tr class="btn-primary">
+                        <th>
+                            BatchNo
+                        </th>
+                        <th>
+                            CLient Name
+                        </th>
+                        <th>
+                            Outlet
+                        </th>
+                        <th>
+                            Mechanism
+                        </th>
+                        <th>
+                            Date
+                        </th>
+                        <th>
+                            Nb First Shift Agents
+                        </th>
+                        <th>
+                            Nb Second Shift Agents
+                        </th>
+                        <th>
+                            Nb Third Shift Agents
+                        </th>
+                        <th>
+                            Nb Fourth Shift Agents
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BatchNo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ClientName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OutletName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MechanismName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateString)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NbAgentShift1)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NbAgentShift2)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NbAgentShift3)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NbAgentShift4)
+                            </td>
+                            <td>
+                                @*<a title="Edit" asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-pencil"></i></a> |
+                        <a title="Details" class="btn btn-xs btn-info" asp-action="Details" asp-route-id="@item.Id"><i class="glyphicon glyphicon-info-sign"></i></a>*@
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <a class="btn btn-default btn-link" asp-action="Index" asp-controller="Agents" asp-route-id="@ViewBag.AgentId"><b>Back to List</b></a>
+            </div>
+        </div>
+    </div>
+</div>

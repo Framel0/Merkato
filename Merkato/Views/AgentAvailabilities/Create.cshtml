@@ -1,0 +1,312 @@
+﻿@model Merkato.Lib.ViewModels.AgentAvailabilityViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!--Data Range Picker-->
+<link rel="stylesheet" type="text/css" href="~/Scripts/daterangepicker/daterangepicker.css" />
+<!--Date Range Picker-->
+
+<div class="col-md-10">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Create Availability</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" asp-action="Create">
+            <div class="box-body">
+                <div class="col-md-6">
+                    <div class="col-md-11">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="AgentId">Agent</label>
+                            <select asp-for="AgentId" asp-items="@Model.AgentList" class="form-control">
+                                <option>Please select one</option>
+                            </select>
+                            <span asp-validation-for="AgentId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group hidden">
+                            <label asp-for="Shift1" class="control-label">Shifts</label>
+                            <input asp-for="Shift1" id="Shifts" class="form-control" readonly="readonly" />
+                            <span asp-validation-for="Shift1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <span><b>Select Shifts</b></span>
+                            <ul class="todo-list">
+                                <li>
+                                    <!-- drag handle -->
+                                    <label class="col-form-label col-sm-2">
+                                        Shift 1
+                                    </label>
+                                    <!-- checkbox -->
+                                    <input type="checkbox" id="Shift1" value="">
+                                </li>
+                                @*<li>
+                                    <!-- drag handle -->
+                                    <label class="col-form-label col-sm-2">
+                                        Shift 2
+                                    </label>
+                                    <!-- checkbox -->
+                                    <input type="checkbox" id="Shift2" value="">
+                                </li>
+                                <li>
+                                    <!-- drag handle -->
+                                    <label class="col-form-label col-sm-2">
+                                        Shift 3
+                                    </label>
+                                    <!-- checkbox -->
+                                    <input type="checkbox" id="Shift3" value="">
+                                </li>
+                                <li>
+                                    <!-- drag handle -->
+                                    <label class="col-form-label col-sm-2">
+                                        Shift 4
+                                    </label>
+                                    <!-- checkbox -->
+                                    <input type="checkbox" id="Shift4" value="">
+                                </li>*@
+
+                            </ul>
+                        </div>
+                        <div class="form-group hidden">
+                            <label asp-for="Shift2" class="control-label">Shifts</label>
+                            <input asp-for="Shift2" id="Shifts" class="form-control" readonly="readonly" />
+                            <span asp-validation-for="Shift2" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <span><b>Select Shifts</b></span>
+                            <ul class="todo-list">
+                                
+                                <li>
+                                    <!-- drag handle -->
+                                    <label class="col-form-label col-sm-2">
+                                        Shift 2
+                                    </label>
+                                    <!-- checkbox -->
+                                    <input type="checkbox" id="Shift2" value="">
+                                </li>
+                                
+
+                            </ul>
+                        </div>
+                        <div class="form-group hidden">
+                            <label asp-for="Shift3" class="control-label">Shifts</label>
+                            <input asp-for="Shift3" id="Shifts" class="form-control" readonly="readonly" />
+                            <span asp-validation-for="Shift3" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <span><b>Select Shifts</b></span>
+                            <ul class="todo-list">
+                                
+                                <li>
+                                    <!-- drag handle -->
+                                    <label class="col-form-label col-sm-2">
+                                        Shift 3
+                                    </label>
+                                    <!-- checkbox -->
+                                    <input type="checkbox" id="Shift3" value="">
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        <div class="form-group hidden">
+                            <label asp-for="Shift4" class="control-label">Shifts</label>
+                            <input asp-for="Shift4" id="Shifts" class="form-control" readonly="readonly" />
+                            <span asp-validation-for="Shift4" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <span><b>Select Shifts</b></span>
+                            <ul class="todo-list">
+                               
+                                <li>
+                                    <!-- drag handle -->
+                                    <label class="col-form-label col-sm-2">
+                                        Shift 4
+                                    </label>
+                                    <!-- checkbox -->
+                                    <input type="checkbox" id="Shift4" value="">
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="DateRangeSelector" class="control-label">Date Range</label>
+                        <input asp-for="DateRangeSelector" id="DateRangeSelector" name="daterange" class="form-control" />
+                        <span asp-validation-for="DateRange" class="text-danger"></span>
+                    </div>
+                    <div class="form-group hidden">
+                        <label asp-for="Days" class="control-label">Days</label>
+                        <input asp-for="Days" id="Days" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="Days" class="text-danger"></span>
+                    </div>
+                    <div class="form-group hidden">
+                        <label asp-for="DateRange" class="control-label">DateRange</label>
+                        <input asp-for="DateRange" id="DateRange" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="DateRange" class="text-danger"></span>
+                    </div>
+                    <div class="form-group hidden">
+                        <label asp-for="StartDateString" class="control-label">StartDate</label>
+                        <input asp-for="StartDateString" id="StartDate" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="StartDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group hidden">
+                        <label asp-for="EndDateString" class="control-label">EndDate</label>
+                        <input asp-for="EndDateString" id="EndDate" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="EndDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <span><b>Select Days</b></span>
+                        <ul class="todo-list">
+                            <li>
+                                <!-- drag handle -->
+                                <label class="col-form-label col-sm-2">
+                                    Monday
+                                </label>
+                                <!-- checkbox -->
+                                <input type="checkbox" id="Mon" value="">
+                            </li>
+                            <li>
+                                <!-- drag handle -->
+                                <label class="col-form-label col-sm-2">
+                                    Tuesday
+                                </label>
+                                <!-- checkbox -->
+                                <input type="checkbox" id="Tue" value="">
+                            </li>
+                            <li>
+                                <!-- drag handle -->
+                                <label class="col-form-label col-sm-2">
+                                    Wednesday
+                                </label>
+                                <!-- checkbox -->
+                                <input type="checkbox" id="Wed" value="">
+                            </li>
+                            <li>
+                                <!-- drag handle -->
+                                <label class="col-form-label col-sm-2">
+                                    Thursday
+                                </label>
+                                <!-- checkbox -->
+                                <input type="checkbox" id="Thu" value="">
+                            </li>
+                            <li>
+                                <!-- drag handle -->
+                                <label class="col-form-label col-sm-2">
+                                    Friday
+                                </label>
+                                <!-- checkbox -->
+                                <input type="checkbox" id="Fri" value="">
+                            </li>
+                            <li>
+                                <!-- drag handle -->
+                                <label class="col-form-label col-sm-2">
+                                    Saturday
+                                </label>
+                                <!-- checkbox -->
+                                <input type="checkbox" id="Sat" value="">
+                            </li>
+                            <li>
+                                <!-- drag handle -->
+                                <label class="col-form-label col-sm-2">
+                                    Sunday
+                                </label>
+                                <!-- checkbox -->
+                                <input type="checkbox" id="Sun" value="">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <a class="btn btn-default" asp-action="Index">Back to List</a>
+                <button type="submit" id="subimit" class="btn btn-info pull-right">Save</button>
+            </div>
+            <!-- /.box-footer -->
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript" src="~/Scripts/daterangepicker/moment.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/daterangepicker/daterangepicker.js"></script>
+
+    <script>
+        $(function () {
+            $('input[name="daterange"]').daterangepicker({
+                opens: 'left'
+            }, function (start, end, label) {
+                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+
+                $("#DateRangeSelector").change(function () {
+                    var selectedOption = $("#DateRangeSelector").val();
+                    $('#DateRange').val(selectedOption);
+                    $('#StartDate').val(start.format('DD-MM-YYYY'));
+                    $('#EndDate').val(end.format('DD-MM-YYYY'));
+                });
+            });
+        });
+    </script>
+    <script>
+        $("#subimit").click(function () {
+            var days = "";
+            if (document.getElementById('Mon').checked) {
+                days = "1";
+            }
+            if (document.getElementById('Tue').checked) {
+                days = days + "2"
+            }
+            if (document.getElementById('Wed').checked) {
+                days = days + "3"
+            }
+            if (document.getElementById('Thu').checked) {
+                days = days + "4"
+            }
+            if (document.getElementById('Fri').checked) {
+                days = days + "5"
+            }
+            if (document.getElementById('Sat').checked) {
+                days = days + "6"
+            }
+            if (document.getElementById('Sun').checked) {
+                days = days + "0"
+            }
+            $("#Days").val(days);
+            console.log("Values" + $("#Days").val(days));
+            console.log("The days choosed are " + days);
+
+            if (days === "") {
+                alert("Please select a day  !!!");
+            }
+
+        });
+    </script>
+    <script>
+        $("#subimit").click(function () {
+            var shifts = "";
+            if (document.getElementById('Shift1').checked) {
+                shifts = "1";
+            }
+            if (document.getElementById('Shift2').checked) {
+                shifts = shifts + "2"
+            }
+            if (document.getElementById('Shift3').checked) {
+                shifts = shifts + "3"
+            }           
+            $("#Shifts").val(shifts);
+            console.log("Values" + $("#Shifts").val(shifts));
+            console.log("The days choosed are " + shifts);
+
+            if (shifts === "") {
+                alert("Please select a day  !!!");
+            }
+
+        });
+    </script>
+}

@@ -1,0 +1,81 @@
+﻿@model Merkato.Lib.Models.AgentAvailability
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>AgentAvailability</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Days)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Days)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Shift1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Shift1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Shift2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Shift2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Shift3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Shift3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Shift4)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Shift4)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastDateModified)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastDateModified)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Agent)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Agent.Id)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

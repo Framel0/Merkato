@@ -1,0 +1,229 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>aspnet-Merkato-A07863F4-308E-423C-8F8C-A47A3A3FCDC8</UserSecretsId>
+    <PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.1\Merkato.xml</DocumentationFile>
+    <OutputPath>bin\Debug\netcoreapp2.1\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Scripts\AgentReport\AgentReportViewModel.js" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="FastReport.Web" Version="2018.3.7-demo" />
+    <PackageReference Include="knockoutjs" Version="3.4.2" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Antiforgery" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Runtime" Version="2.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.4" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.5" PrivateAssets="All" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\bootstrap\css\bootstrap-theme.css.map" />
+    <None Include="wwwroot\lib\bootstrap\css\bootstrap-theme.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\lib\bootstrap\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\js\npm.js" />
+    <None Include="wwwroot\lib\jquery\core.js" />
+    <None Include="wwwroot\lib\jquery\jquery.js" />
+    <None Include="wwwroot\lib\jquery\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\jquery.min.map" />
+    <None Include="wwwroot\lib\jquery\jquery.slim.js" />
+    <None Include="wwwroot\lib\jquery\jquery.slim.min.js" />
+    <None Include="wwwroot\lib\jquery\jquery.slim.min.map" />
+    <None Include="wwwroot\lib\site\wilderblog.min.js" />
+    <None Include="wwwroot\plugins\bootstrap-slider\bootstrap-slider.js" />
+    <None Include="wwwroot\plugins\bootstrap-slider\slider.css" />
+    <None Include="wwwroot\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.js" />
+    <None Include="wwwroot\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.min.js" />
+    <None Include="wwwroot\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.css" />
+    <None Include="wwwroot\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.min.css" />
+    <None Include="wwwroot\plugins\iCheck\all.css" />
+    <None Include="wwwroot\plugins\iCheck\flat\aero%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\aero.css" />
+    <None Include="wwwroot\plugins\iCheck\flat\aero.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\blue%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\blue.css" />
+    <None Include="wwwroot\plugins\iCheck\flat\blue.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\flat%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\flat.css" />
+    <None Include="wwwroot\plugins\iCheck\flat\flat.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\green%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\green.css" />
+    <None Include="wwwroot\plugins\iCheck\flat\green.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\grey%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\grey.css" />
+    <None Include="wwwroot\plugins\iCheck\flat\grey.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\orange%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\orange.css" />
+    <None Include="wwwroot\plugins\iCheck\flat\orange.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\pink%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\pink.css" />
+    <None Include="wwwroot\plugins\iCheck\flat\pink.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\purple%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\purple.css" />
+    <None Include="wwwroot\plugins\iCheck\flat\purple.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\red%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\red.css" />
+    <None Include="wwwroot\plugins\iCheck\flat\red.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\yellow%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\yellow.css" />
+    <None Include="wwwroot\plugins\iCheck\flat\yellow.png" />
+    <None Include="wwwroot\plugins\iCheck\flat\_all.css" />
+    <None Include="wwwroot\plugins\iCheck\futurico\futurico%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\futurico\futurico.css" />
+    <None Include="wwwroot\plugins\iCheck\futurico\futurico.png" />
+    <None Include="wwwroot\plugins\iCheck\icheck.js" />
+    <None Include="wwwroot\plugins\iCheck\icheck.min.js" />
+    <None Include="wwwroot\plugins\iCheck\line\aero.css" />
+    <None Include="wwwroot\plugins\iCheck\line\blue.css" />
+    <None Include="wwwroot\plugins\iCheck\line\green.css" />
+    <None Include="wwwroot\plugins\iCheck\line\grey.css" />
+    <None Include="wwwroot\plugins\iCheck\line\line%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\line\line.css" />
+    <None Include="wwwroot\plugins\iCheck\line\line.png" />
+    <None Include="wwwroot\plugins\iCheck\line\orange.css" />
+    <None Include="wwwroot\plugins\iCheck\line\pink.css" />
+    <None Include="wwwroot\plugins\iCheck\line\purple.css" />
+    <None Include="wwwroot\plugins\iCheck\line\red.css" />
+    <None Include="wwwroot\plugins\iCheck\line\yellow.css" />
+    <None Include="wwwroot\plugins\iCheck\line\_all.css" />
+    <None Include="wwwroot\plugins\iCheck\minimal\aero%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\aero.css" />
+    <None Include="wwwroot\plugins\iCheck\minimal\aero.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\blue%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\blue.css" />
+    <None Include="wwwroot\plugins\iCheck\minimal\blue.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\green%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\green.css" />
+    <None Include="wwwroot\plugins\iCheck\minimal\green.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\grey%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\grey.css" />
+    <None Include="wwwroot\plugins\iCheck\minimal\grey.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\minimal%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\minimal.css" />
+    <None Include="wwwroot\plugins\iCheck\minimal\minimal.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\orange%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\orange.css" />
+    <None Include="wwwroot\plugins\iCheck\minimal\orange.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\pink%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\pink.css" />
+    <None Include="wwwroot\plugins\iCheck\minimal\pink.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\purple%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\purple.css" />
+    <None Include="wwwroot\plugins\iCheck\minimal\purple.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\red%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\red.css" />
+    <None Include="wwwroot\plugins\iCheck\minimal\red.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\yellow%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\yellow.css" />
+    <None Include="wwwroot\plugins\iCheck\minimal\yellow.png" />
+    <None Include="wwwroot\plugins\iCheck\minimal\_all.css" />
+    <None Include="wwwroot\plugins\iCheck\polaris\polaris%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\polaris\polaris.css" />
+    <None Include="wwwroot\plugins\iCheck\polaris\polaris.png" />
+    <None Include="wwwroot\plugins\iCheck\square\aero%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\square\aero.css" />
+    <None Include="wwwroot\plugins\iCheck\square\aero.png" />
+    <None Include="wwwroot\plugins\iCheck\square\blue%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\square\blue.css" />
+    <None Include="wwwroot\plugins\iCheck\square\blue.png" />
+    <None Include="wwwroot\plugins\iCheck\square\green%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\square\green.css" />
+    <None Include="wwwroot\plugins\iCheck\square\green.png" />
+    <None Include="wwwroot\plugins\iCheck\square\grey%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\square\grey.css" />
+    <None Include="wwwroot\plugins\iCheck\square\grey.png" />
+    <None Include="wwwroot\plugins\iCheck\square\orange%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\square\orange.css" />
+    <None Include="wwwroot\plugins\iCheck\square\orange.png" />
+    <None Include="wwwroot\plugins\iCheck\square\pink%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\square\pink.css" />
+    <None Include="wwwroot\plugins\iCheck\square\pink.png" />
+    <None Include="wwwroot\plugins\iCheck\square\purple%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\square\purple.css" />
+    <None Include="wwwroot\plugins\iCheck\square\purple.png" />
+    <None Include="wwwroot\plugins\iCheck\square\red%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\square\red.css" />
+    <None Include="wwwroot\plugins\iCheck\square\red.png" />
+    <None Include="wwwroot\plugins\iCheck\square\square%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\square\square.css" />
+    <None Include="wwwroot\plugins\iCheck\square\square.png" />
+    <None Include="wwwroot\plugins\iCheck\square\yellow%402x.png" />
+    <None Include="wwwroot\plugins\iCheck\square\yellow.css" />
+    <None Include="wwwroot\plugins\iCheck\square\yellow.png" />
+    <None Include="wwwroot\plugins\iCheck\square\_all.css" />
+    <None Include="wwwroot\plugins\input-mask\jquery.inputmask.date.extensions.js" />
+    <None Include="wwwroot\plugins\input-mask\jquery.inputmask.extensions.js" />
+    <None Include="wwwroot\plugins\input-mask\jquery.inputmask.js" />
+    <None Include="wwwroot\plugins\input-mask\jquery.inputmask.numeric.extensions.js" />
+    <None Include="wwwroot\plugins\input-mask\jquery.inputmask.phone.extensions.js" />
+    <None Include="wwwroot\plugins\input-mask\jquery.inputmask.regex.extensions.js" />
+    <None Include="wwwroot\plugins\input-mask\phone-codes\readme.txt" />
+    <None Include="wwwroot\plugins\jQueryUI\jquery-ui.js" />
+    <None Include="wwwroot\plugins\jQueryUI\jquery-ui.min.js" />
+    <None Include="wwwroot\plugins\jvectormap\jquery-jvectormap-1.2.2.css" />
+    <None Include="wwwroot\plugins\jvectormap\jquery-jvectormap-1.2.2.min.js" />
+    <None Include="wwwroot\plugins\jvectormap\jquery-jvectormap-usa-en.js" />
+    <None Include="wwwroot\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <None Include="wwwroot\plugins\pace\pace.css" />
+    <None Include="wwwroot\plugins\pace\pace.js" />
+    <None Include="wwwroot\plugins\pace\pace.min.css" />
+    <None Include="wwwroot\plugins\pace\pace.min.js" />
+    <None Include="wwwroot\plugins\timepicker\bootstrap-timepicker.css" />
+    <None Include="wwwroot\plugins\timepicker\bootstrap-timepicker.js" />
+    <None Include="wwwroot\plugins\timepicker\bootstrap-timepicker.min.css" />
+    <None Include="wwwroot\plugins\timepicker\bootstrap-timepicker.min.js" />
+    <None Include="wwwroot\Scripts\AgentReport\AgentReportViewModel.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Reports\Location.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Reports\LocationForm.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Reports\LocationParam.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Reports\OutletLocation.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Reports\Simple List.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Reports\SimpleLocation.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\IdPictures\" />
+    <Folder Include="wwwroot\images\CVPictures\" />
+    <Folder Include="wwwroot\images\TrainingMaterial\" />
+    <Folder Include="wwwroot\images\PINPictures\" />
+    <Folder Include="wwwroot\images\NHIFPictures\" />
+    <Folder Include="wwwroot\images\NSSFPictures\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Merkato.Lib\Merkato.Lib.csproj" />
+  </ItemGroup>
+
+</Project>

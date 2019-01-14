@@ -1,0 +1,44 @@
+{
+  "name": "merkato",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "admin-lte": "^2.4.3",
+    "bootstrap": "^3.3.7",
+    "bootstrap-datepicker": "^1.8.0",
+    "bootstrap-tooltip": "^3.1.1",
+    "chart.js": "^2.7.2",
+    "datatables.net": "^1.10.16",
+    "datatables.net-bs": "^1.10.16",
+    "datepicker": "0.0.0",
+    "fastclick": "^1.0.6",
+    "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-npm-dist": "^1.0.2",
+    "gulp-uglify": "^3.0.0",
+    "inputmask": "^4.0.0",
+    "ionicons": "^4.1.2",
+    "jquery": "^3.3.1",
+    "jquery-slimscroll": "^1.3.8",
+    "jquery-sparkline": "^2.4.0",
+    "jquery-ui": "^1.12.1",
+    "jquery-ui-dist": "^1.12.1",
+    "jvectormap": "^2.0.4",
+    "knockout": "^3.4.2",
+    "merge-stream": "^1.0.1",
+    "ng-weekday-selector": "^0.1.1",
+    "rimraf": "^2.6.2",
+    "slimscroll": "^0.9.1"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery-sparkline": "^2.4.0"
+  }
+}

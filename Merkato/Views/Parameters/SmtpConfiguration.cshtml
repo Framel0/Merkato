@@ -1,0 +1,71 @@
+﻿@model Merkato.Lib.Models.SmtpConfig
+@{
+    ViewData["Title"] = "SmtpConfiguration";
+}
+
+<div class="col-md-6">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Smtp Configuration</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" asp-action="SmtpConfiguration">
+            <div class="box-body">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="ServerAdress" class="control-label col-md-3">Server Ad</label>
+                    <div class="col-md-9">
+                        <input asp-for="ServerAdress" class="form-control" />
+                        <span asp-validation-for="ServerAdress" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Credential.Username" class="control-label col-md-3">Username</label>
+                    <div class="col-md-9">
+                        <input asp-for="Credential.Username" class="form-control" />
+                        <span asp-validation-for="Credential.Username" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Credential.Password" class="control-label col-md-3">Password</label>
+                    <div class="col-md-9">
+                        <input type="text" asp-for="Credential.Password" class="form-control" />
+                        <span asp-validation-for="Credential.Password" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServerPort" class="control-label col-md-3">Port</label>
+                <div class="col-md-9">
+                    <input asp-for="ServerPort" class="form-control" />
+                    <span asp-validation-for="ServerPort" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="input3" class="col-md-3 control-label">Copy Mail</label>
+                <div class="col-md-9">
+                    <textarea asp-for="CopyMail" class="form-control" id="input3"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label asp-for="EnableSsl" class="control-label col-md-3">Enable SSL</label>
+                    <div class="col-md-9">
+                        <input asp-for="EnableSsl" />
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <a class="btn btn-default" asp-action="Index">Back to List</a>
+                <button type="submit" class="btn btn-info pull-right">Save</button>
+            </div>
+            <!-- /.box-footer -->
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

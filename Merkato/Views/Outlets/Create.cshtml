@@ -1,0 +1,133 @@
+﻿@model Merkato.Lib.ViewModels.OutLetViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="col-md-6">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Create Outlet</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" asp-action="Create">
+            <div class="box-body">
+                <div class="col-md-10">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Code" class="control-label"></label>
+                        <input asp-for="Code" class="form-control" />
+                        <span asp-validation-for="Code" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ContactName" class="control-label">Contact Name</label>
+                        <input asp-for="ContactName" class="form-control" />
+                        <span asp-validation-for="ContactName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ContactPhoneNber" class="control-label">Contact Phone No</label>
+                        <input asp-for="ContactPhoneNber" class="form-control" />
+                        <span asp-validation-for="ContactPhoneNber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Supervisor" class="control-label">Supervisor</label>
+                        <input asp-for="Supervisor" class="form-control" />
+                        <span asp-validation-for="Supervisor" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Latitude" class="control-label"></label>
+                        <input asp-for="Latitude" class="form-control" />
+                        <span asp-validation-for="Latitude" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Longitude" class="control-label"></label>
+                        <input asp-for="Longitude" class="form-control" />
+                        <span asp-validation-for="Longitude" class="text-danger"></span>
+                    </div>
+                    @*<div class="form-group">
+                            <label asp-for="LocationId">Location</label>
+                            <select asp-for="LocationId" asp-items="@Model.LocationList" class="form-control">
+                                <option>Please select one</option>
+                            </select>
+                            <span asp-validation-for="LocationId" class="text-danger"></span>
+                        </div>*@
+                    <div class="form-group">
+                        <label asp-for="Status">Status</label>
+                        <select asp-for="Status" asp-items="@Model.ActiveList" class="form-control">
+                            <option>Please select one</option>
+                        </select>
+                        <span asp-validation-for="Status" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <a class="btn btn-default" asp-action="Index" asp-controller="Locations" asp-route-id="@ViewBag.LocationId">Back to List</a>
+                <button type="submit" class="btn btn-info pull-right">Save</button>
+            </div>
+            <!-- /.box-footer -->
+        </form>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Coordinate</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form id="form1" runat="server">
+            <div id="MyMapLOC" style="width: 740px; height: 650px">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6v5-2uaq_wusHDktM9ILcqIrlPtnZgEk&sensor=false">
+
+</script>
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places">
+
+</script>
+
+<script type="text/javascript">
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(success);
+        } else {
+        alert("There is Some Problem on your current browser to get Geo Location!");
+        }
+
+        function success(position) {
+            var lat = position.coords.latitude;
+            var long = position.coords.longitude;
+            var city = position.coords.locality;
+            var LatLng = new google.maps.LatLng(lat, long);
+            var mapOptions = {
+                center: LatLng,
+                zoom: 12,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            var map = new google.maps.Map(document.getElementById("MyMapLOC"), mapOptions);
+            var marker = new google.maps.Marker({
+                position: LatLng,
+                title: "<div style = 'height:60px;width:200px'><b>Your location:</b><br />Latitude: "
+                            + lat + +"<br />Longitude: " + long
+            });
+
+            marker.setMap(map);
+            var getInfoWindow = new google.maps.InfoWindow({ content: "<b>Your Current Location</b><br/> Latitude:" +
+                                    lat + "<br /> Longitude:" + long + "" });
+            getInfoWindow.open(map, marker);
+        }
+</script>
+

@@ -1,0 +1,650 @@
+﻿
+@model Merkato.Lib.ViewModels.AgentViewModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<form asp-action="Edit"
+      asp-controller="Agents"
+      method="post"
+      class="form-horizontal">
+    <div class="col-md-12">
+        <div class="form-group col-md-8">
+
+            <div class="col-md-2">
+                <input type="submit" value="Save" class="btn btn-info btn-block" />
+            </div>
+            <div class="col-md-2">
+                <a asp-action="Index" class="btn btn-default btn-block">Cancel</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="well col-md-12">
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active"><a data-toggle="tab" href="#bioDataTab">Bio Data</a></li>
+            <li><a data-toggle="tab" href="#personalDetailsTab">Personal Details</a></li>
+            <li><a data-toggle="tab" href="#bankDetailsTab">Payment Details</a></li>
+            <li><a data-toggle="tab" href="#EmergencyTab">Primary & Secondary Emergency</a></li>
+            <li><a data-toggle="tab" href="#otherInfoTab">Other Information</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="bioDataTab" class="tab-pane fade in active">
+                <div class="box box-info">
+                    <div class="box-body">
+                        <div class="form-horizontal">
+                            <hr />
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <div class="col-md-11">
+                                        @if (!User.IsInRole("Agent"))
+                                        {
+                                            <div class="form-group">
+                                                <label asp-for="EmpCode">Agent Code</label>
+                                                <input asp-for="EmpCode" class="form-control" placeholder="Agent Code" readonly="readonly" />
+                                                <span asp-validation-for="EmpCode" class="text-danger"></span>
+                                            </div>
+                                        }
+                                        <div class="form-group">
+                                            <label asp-for="FirstName">FirstName</label>
+                                            <input asp-for="FirstName" class="form-control" placeholder="FirstName" />
+                                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="MiddleName">MiddleName</label>
+                                            <input asp-for="MiddleName" class="form-control" placeholder="MiddleName" />
+                                            <span asp-validation-for="MiddleName" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="SurName">SurName</label>
+                                            <input asp-for="SurName" class="form-control" placeholder="SurName" />
+                                            <span asp-validation-for="SurName" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="DOBString">Date of Birth</label>
+                                            <input asp-for="DOBString" class="form-control datepicker" placeholder="dd-MM-yyyy" />
+                                            <span asp-validation-for="Dob" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="Gender">Gender</label>
+                                            <select asp-for="Gender" asp-items="@Model.GenderList" class="form-control">
+                                                <option>Please select Gender</option>
+                                            </select>
+                                            <span asp-validation-for="Gender" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="MaritalStatus">Marital Status</label>
+                                            <select asp-for="MaritalStatus" asp-items="@Model.MaritalStatusList" class="form-control">
+                                                <option>Please select Marital Status</option>
+                                            </select>
+                                            <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label asp-for="IdNumber">ID Number</label>
+                                            <input asp-for="IdNumber" class="form-control" placeholder="ID Number" />
+                                            <span asp-validation-for="IdNumber" class="text-danger"></span>
+                                        </div>
+                                     
+                                        <div class="form-group">
+                                            <label asp-for="DepartmentId">Department</label>
+                                            <select asp-for="DepartmentId" asp-items="@Model.DepartmentList" class="form-control">
+                                                <option>Please select Department</option>
+                                            </select>
+                                            <span asp-validation-for="DepartmentId" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="EducationId">Education</label>
+                                            <select asp-for="EducationId" asp-items="@Model.EducationList" class="form-control">
+                                                <option>Please select Education</option>
+                                            </select>
+                                            <span asp-validation-for="EducationId" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="col-md-11">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <div class="col-md-9">
+
+                                                </div>
+                                                <div class="col-md-3">
+                                                    @Html.HiddenFor(model => model.FirstPictureUrl, new { id = "PictureUrl_" })
+                                                    <img width="100" src='@Url.Content("~/images/Agents/")@Model.FirstPictureUrl' align="middle"
+                                                         height="120" id='@("picture_Img_")' />
+                                                    <input asp-for="FirstPictureUrl" type="file" id='@("MemberuploadFile_")' name="files" onchange="uploadImage('@("#MemberuploadFile_")', '@("#picture_Img_")',  '@("#PictureUrl_")', 'Agents')" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="form-group">
+                                            <label asp-for="JobTitleId">JobTitle</label>
+                                            <select asp-for="JobTitleId" asp-items="@Model.JobTitleList" class="form-control">
+                                                <option>Please select Job Title</option>
+                                            </select>
+                                            <span asp-validation-for="JobTitleId" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="ReportTo">Report To</label>
+                                            <input asp-for="ReportTo" class="form-control" placeholder="Report To" />
+                                            <span asp-validation-for="ReportTo" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="PayrollNo">Payroll No</label>
+                                            <input asp-for="PayrollNo" class="form-control" placeholder="Payroll No" />
+                                            <span asp-validation-for="PayrollNo" class="text-danger"></span>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label asp-for="LocationId">Location</label>
+                                            <select asp-for="LocationId" asp-items="@Model.LocationList" class="form-control">
+                                                <option>Please select one</option>
+                                            </select>
+                                            <span asp-validation-for="LocationId" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="Status">Agent Status</label>
+                                            <select asp-for="Status" asp-items="@Model.StatusList" class="form-control">
+                                                <option>Please select one</option>
+                                            </select>
+                                            <span asp-validation-for="Status" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="Supervisor">Supervisor</label>
+                                            <select asp-for="Supervisor" asp-items="@Model.YesOrNoList" class="form-control">
+                                                <option>Please select one</option>
+                                            </select>
+                                            <span asp-validation-for="Supervisor" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="personalDetailsTab" class="tab-pane fade">
+
+                <div class="box box-info">
+                    <div class="box-body">
+                        <hr />
+                        <div class="form-horizontal">
+                            <div class="col-md-12">
+                                <div class="box box-info">
+                                    <div class="box-body">
+                                        <div class="col-md-6">
+                                            <div class="col-md-11">
+                                                <div class="form-group">
+                                                    <label asp-for="PhoneNo">PhoneNo</label>
+                                                    <input type="tel" asp-for="PhoneNo" class="form-control" placeholder="PhoneNo" />
+                                                    <span asp-validation-for="PhoneNo" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="PersonalEmail">Email</label>
+                                                    <input type="email" asp-for="PersonalEmail" class="form-control" placeholder="merkato@example.com" />
+                                                    <span asp-validation-for="PersonalEmail" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="CurrentAddress">Current Address</label>
+                                                    <input asp-for="CurrentAddress" class="form-control" placeholder="Current Address" />
+                                                    <span asp-validation-for="CurrentAddress" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1"></div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="col-md-11">
+                                                <div class="form-group">
+                                                    <label asp-for="Nssfno">Nssf No</label>
+                                                    <input asp-for="Nssfno" class="form-control" placeholder="Nssf No" />
+                                                    <span asp-validation-for="Nssfno" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="Nhifno">Nhif No</label>
+                                                    <input asp-for="Nhifno" class="form-control" placeholder="Nhif No" />
+                                                    <span asp-validation-for="Nhifno" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="Pinno">Pin No</label>
+                                                    <input asp-for="Pinno" class="form-control" placeholder="Pin No" />
+                                                    <span asp-validation-for="Pinno" class="text-danger"></span>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-md-1">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box box-info">
+                                    <div class="box-body">
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <input asp-for="ResumePictureUrl" id="PassportPhoto" hidden="hidden">
+                                                    <label for="ResumePictureUrl">Copy of CV and certificates</label>
+                                                    <input asp-for="ResumePictureUrl" type="file" id="ResumePictureUrl_" name="files" onchange="uploadDocument('@("#ResumePictureUrl_")','@("#PassportPhoto")', 'NHIFPictures')">
+                                                    <p class="help-block">Copy of CV and certificates</p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input asp-for="IdPictureUrl" id="IdPictureImage" hidden="hidden" />
+                                                    <label for="IdPictureUrl">Copy of ID</label>
+                                                    <input type="file" id="IdPictureUrl_" name="files" onchange="uploadDocument('@("#IdPictureUrl_")','@("#IdPictureImage")', 'NHIFPictures')">
+                                                    <p class="help-block">Copy of ID</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <input asp-for="NssfcardPictureUrl" id="NssfImage" hidden="hidden" />
+                                                    <label for="NssfcardPictureUrl">Copy of NSSF card</label>
+                                                    <input asp-for="NssfcardPictureUrl" type="file" id="NssfcardPictureUrl_" name="files" onchange="uploadDocument('@("#NssfcardPictureUrl_")','@("#NssfImage")', 'NHIFPictures')">
+                                                    <p class="help-block">Copy of NSSF card</p>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input asp-for="NhifcardPictureUrl" id="NHIFImage" hidden="hidden" />
+                                                    <label for="NhifcardPictureUrl">Copy of NHIF card</label>
+                                                    <input asp-for="NhifcardPictureUrl" type="file" id="NhifcardPictureUrl" name="files" onchange="uploadDocument('@("#NhifcardPictureUrl")','@("#NHIFImage")', 'NHIFPictures')">
+                                                    <p class="help-block">Copy of NHIF card</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <input asp-for="PincertificatePictureUrl" id="PinImage" hidden="hidden" />
+                                                    <label for="PincertificatePictureUrl">Copy of PIN certificate</label>
+                                                    <input asp-for="PincertificatePictureUrl" type="file" id="PincertificatePictureUrl" name="files" onchange="uploadDocument('@("#PincertificatePictureUrl")','@("#PinImage")', 'NHIFPictures')">
+                                                    <p class="help-block">Copy of PIN certificate</p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input asp-for="CertificatePictureUrl" id="CertificateImage" hidden="hidden" />
+                                                    <label for="CertificatePictureUrl">Good conduit certificate</label>
+                                                    <input asp-for="CertificatePictureUrl" type="file" id="CertificatePictureUrl_" name="files" multiple onchange="uploadDocument('@("#CertificatePictureUrl_")','@("#CertificateImage")', 'NHIFPictures')">
+                                                    <p class="help-block">Good conduit certificate</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="bankDetailsTab" class="tab-pane fade">
+                <div class="box box-info">
+                    <div class="box-body">
+                        <hr />
+
+                        <div class="form-horizontal">
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            <label asp-for="AccountName">Account Name</label>
+                                            <input asp-for="AccountName" class="form-control" placeholder="Account Name" />
+                                            <span asp-validation-for="AccountName" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="AccountNo">Account No</label>
+                                            <input asp-for="AccountNo" class="form-control" placeholder="AccountNo" />
+                                            <span asp-validation-for="AccountNo" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="MomoPhoneNo">Momo PhoneNo</label>
+                                            <input asp-for="MomoPhoneNo" class="form-control" placeholder="Mobile money PhoneNo" />
+                                            <span asp-validation-for="MomoPhoneNo" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="MainBankId">Bank</label>
+                                            <select asp-for="MainBankId" asp-items="@Model.BankList" class="form-control">
+                                                <option>Please select one</option>
+                                            </select>
+                                            <span asp-validation-for="MainBankId" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="BankBranchId">Bank Branch</label>
+                                            <select asp-for="BankBranchId" asp-items="@Model.BankList" class="form-control">
+                                                <option>Please select one</option>
+                                            </select>
+                                            <span asp-validation-for="BankBranchId" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="employeeContactDetails" class="tab-pane fade">
+                <div class="box box-info">
+                    <div class="box-body">
+                        <hr />
+                        <div class="form-horizontal">
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <div class="col-md-11">
+                                    </div>
+                                    <div class="col-md-1">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="col-md-11">
+
+                                    </div>
+                                    <div class="col-md-1">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="EmergencyTab" class="tab-pane fade">
+                <div class="box box-info">
+                    <div class="box-body">
+                        <hr />
+                        <div class="form-horizontal">
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <div class="row">
+                                                <div class="col col-xs-6">
+                                                    <h3 class="panel-title"><b>Primary Emergency</b></h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="col-md-12">
+                                                <div class="col-md-11">
+                                                    <div class="form-group">
+                                                        <label asp-for="PrimaryEmergencyContactName">Contact Name</label>
+                                                        <input asp-for="PrimaryEmergencyContactName" class="form-control" placeholder="Contact Name" />
+                                                        <span asp-validation-for="PrimaryEmergencyContactName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label asp-for="PrimaryEmergencyContactRelationship">Contact Relationship </label>
+                                                        <select asp-for="PrimaryEmergencyContactRelationship" asp-items="@Model.DependantList" class="form-control">
+                                                            <option>Please select one</option>
+                                                        </select>
+                                                        <span asp-validation-for="PrimaryEmergencyContactRelationship" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label asp-for="PrimaryEmergencyContactPlaceOfWork">Contact Place Of Work</label>
+                                                        <input asp-for="PrimaryEmergencyContactPlaceOfWork" class="form-control" placeholder="Contact Place Of Work" />
+                                                        <span asp-validation-for="PrimaryEmergencyContactPlaceOfWork" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label asp-for="PrimaryEmergencyContactPhone">Contact Phone</label>
+                                                        <input asp-for="PrimaryEmergencyContactPhone" class="form-control" placeholder="Contact Phone" />
+                                                        <span asp-validation-for="PrimaryEmergencyContactPhone" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label asp-for="PrimaryEmergencyContactEmail">Contact Email</label>
+                                                        <input asp-for="PrimaryEmergencyContactEmail" class="form-control" placeholder="Contact Email" />
+                                                        <span asp-validation-for="PrimaryEmergencyContactEmail" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1"></div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <div class="row">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <div class="row">
+                                                <div class="col col-xs-6">
+                                                    <h3 class="panel-title"><b>Secondary Emergency</b></h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="col-md-12">
+
+                                                <div class="col-md-11">
+                                                    <div class="form-group">
+                                                        <label asp-for="SecondaryEmergencyContactName">Contact Name</label>
+                                                        <input asp-for="SecondaryEmergencyContactName" class="form-control" placeholder="Contact Name" />
+                                                        <span asp-validation-for="SecondaryEmergencyContactName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label asp-for="SecondaryEmergencyContactRelationship">Contact Relationship</label>
+                                                        <select asp-for="SecondaryEmergencyContactRelationship" asp-items="@Model.DependantList" class="form-control">
+                                                            <option>Please select one</option>
+                                                        </select>
+                                                        <span asp-validation-for="SecondaryEmergencyContactRelationship" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label asp-for="SecondaryEmergencyContactPlaceOfWork">Contact Place Of Work</label>
+                                                        <input asp-for="SecondaryEmergencyContactPlaceOfWork" class="form-control" placeholder="Contact Place Of Work" />
+                                                        <span asp-validation-for="SecondaryEmergencyContactPlaceOfWork" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label asp-for="SecondaryEmergencyContactPhone">Contact Phone</label>
+                                                        <input asp-for="SecondaryEmergencyContactPhone" class="form-control" placeholder="Contact Phone" />
+                                                        <span asp-validation-for="SecondaryEmergencyContactPhone" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label asp-for="SecondaryEmergencyContactEmail">Contact Email</label>
+                                                        <input asp-for="SecondaryEmergencyContactEmail" class="form-control" placeholder="Contact Email" />
+                                                        <span asp-validation-for="SecondaryEmergencyContactEmail" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <div class="row">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="otherInfoTab" class="tab-pane fade">
+                <div class="box box-info">
+                    <div class="box-body">
+                        <hr />
+                        <div class="form-horizontal">
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <div class="col-md-11">
+                                        <div class="form-group">
+                                            <label asp-for="EmployeeEmergencyContactName">Contact Name</label>
+                                            <input asp-for="EmployeeEmergencyContactName" class="form-control" placeholder="Name" />
+                                            <span asp-validation-for="EmployeeEmergencyContactName" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="EmployeeEmergencyContactResidential">Residential</label>
+                                            <input asp-for="EmployeeEmergencyContactResidential" class="form-control" placeholder="Contact Residential" />
+                                            <span asp-validation-for="EmployeeEmergencyContactResidential" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="EmployeeEmergencyContactNearestPlace">Contact Nearest Place</label>
+                                            <input asp-for="EmployeeEmergencyContactNearestPlace" class="form-control" placeholder="Contact Nearest Place" />
+                                            <span asp-validation-for="EmployeeEmergencyContactNearestPlace" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="EmployeeEmergencyContactCellPhone">Cell Phone</label>
+                                            <input asp-for="EmployeeEmergencyContactCellPhone" class="form-control" placeholder="Contact Cell Phone" />
+                                            <span asp-validation-for="EmployeeEmergencyContactCellPhone" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="EmployeeEmergencyContactAlternativeEmail">Contact Alternative Email</label>
+                                            <input asp-for="EmployeeEmergencyContactAlternativeEmail" class="form-control" placeholder="Contact Alternative Email" />
+                                            <span asp-validation-for="EmployeeEmergencyContactAlternativeEmail" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="ExistingMedicalHistory">Existing Medical History</label>
+                                            <input asp-for="ExistingMedicalHistory" class="form-control" placeholder="Existing Medical History" />
+                                            <span asp-validation-for="ExistingMedicalHistory" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="PmsstaffWhoKnowsYourHouse">Any Pms staff Who Knows Your House</label>
+                                            <input asp-for="PmsstaffWhoKnowsYourHouse" class="form-control" placeholder="Any Pms staff Who Knows Your House" />
+                                            <span asp-validation-for="PmsstaffWhoKnowsYourHouse" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="OtherInformations">Other Informations</label>
+                                            <input asp-for="OtherInformations" class="form-control" placeholder="Other Informations" />
+                                            <span asp-validation-for="OtherInformations" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="col-md-11">
+                                        <div class="form-group">
+                                            <label asp-for="Pmsrelative">Do you have any relative in PMS Group?</label>
+                                            <select asp-for="Pmsrelative" asp-items="@Model.YesOrNoList" class="form-control">
+                                                <option>Please select one</option>
+                                            </select>
+                                            <span asp-validation-for="Pmsrelative" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="PmsrelativeName">Pms Relative Name</label>
+                                            <input asp-for="PmsrelativeName" class="form-control" placeholder="Pms Relative Name" />
+                                            <span asp-validation-for="PmsrelativeName" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="PmsrelativeRelationship">Pms Relative Relationship</label>
+                                            <select asp-for="PmsrelativeRelationship" asp-items="@Model.DependantList" class="form-control">
+                                                <option>Please select one</option>
+                                            </select>
+                                            <span asp-validation-for="PmsrelativeRelationship" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="PmscontactPhoneNo">Pms Relative PhoneNo</label>
+                                            <input asp-for="PmscontactPhoneNo" class="form-control" placeholder="Pms Relative PhoneNo" />
+                                            <span asp-validation-for="PmscontactPhoneNo" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="Note">Note</label>
+                                            <textarea asp-for="Note" class="form-control" cols="70" rows="12" placeholder="Note"></textarea>
+                                            <span asp-validation-for="Note" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group hidden">
+                                            <div class="checkbox">
+                                                <label asp-for="IsActive" class="control-label col-md-3">IsActive</label>
+                                                <div class="col-md-9">
+                                                    <input asp-for="IsActive" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group hidden">
+                                            <label asp-for="AgentAppUserName">AgentAppUserName</label>
+                                            <input asp-for="AgentAppUserName" class="form-control" placeholder="AgentAppUserName" />
+                                            <span asp-validation-for="AgentAppUserName" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group hidden">
+                                            <label asp-for="AgentAppPassword">AgentAppPassword</label>
+                                            <input asp-for="AgentAppPassword" class="form-control" placeholder="AgentAppPassword" />
+                                            <span asp-validation-for="AgentAppPassword" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+    var uploadImage = function (uploader, img, hiddenField, folder) {
+        var formData = new FormData();
+        var opmlFile = $(uploader)[0];
+
+        console.log(opmlFile);
+
+        var _url = '@Url.Action("UploadImage", "File")';
+
+        console.log(_url);
+
+        formData.append("folder", folder);
+        console.log(folder);
+
+        formData.append("opmlFile", opmlFile.files[0]);
+        console.log(opmlFile.files[0]);
+
+        console.log('uploading');
+
+        $.ajax({
+            url: _url,
+            type: 'POST',
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            timeout: 600000,
+
+            success: function (data) {
+
+                console.log(data);
+                $(img).attr("src", "http://localhost:8169//" + "Images//" + folder + "//" + data);
+                console.log("src", "http://localhost:8169//" + "Images//" + folder + "//" + data);
+                $(img).width(120);
+                $(img).height(120);
+                $(hiddenField).val(data);
+
+                console.log("Picture successfully Uploaded");
+            },
+            error: function (data) {
+
+                console.log("Unable to Upload the files");
+
+                console.log(data);
+
+
+            }
+        });
+
+        //app.trigger('busy', true);
+
+    };
+
+
+</script>
+
+

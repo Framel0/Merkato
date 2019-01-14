@@ -1,0 +1,56 @@
+﻿@model Merkato.Lib.ViewModels.InvoiceViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>InvoiceViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="BatchNo" class="control-label"></label>
+                <input asp-for="BatchNo" class="form-control" />
+                <span asp-validation-for="BatchNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientName" class="control-label"></label>
+                <input asp-for="ClientName" class="form-control" />
+                <span asp-validation-for="ClientName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InvoiceDate" class="control-label"></label>
+                <input asp-for="InvoiceDate" class="form-control" />
+                <span asp-validation-for="InvoiceDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DueDate" class="control-label"></label>
+                <input asp-for="DueDate" class="form-control" />
+                <span asp-validation-for="DueDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

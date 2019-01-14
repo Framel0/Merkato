@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="07/13/2018 15:41:47" ReportInfo.Modified="07/17/2018 18:54:27" ReportInfo.CreatorVersion="2018.3.20.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="LocationDS" ConnectionString="rijcmlqv8nJFtbbl/+HQCYlhi1/QsHUaqtS+89RgUl9WF89dbW3331ZR5MI6sB1PSZbvgu/etGi+v/PXkvkctN1tQDyZW9zszXlYwdc2prE0BfP6XFs2/sFymRGzkaBH8OoP1VBcNFy/3mBtPgl2LKFccbAvJ8uV0VvlHBKGX6QS9Q/n764ugLpEHvBWrOJ8uGniWBhu+ZUx1EXrVLjxuuV8fkFCw==">
+      <TableDataSource Name="Table" Alias="OutletLocation" DataType="System.Int32" Enabled="true" SelectCommand="Select L.Name as LocationName, O.Name as Outletname &#13;&#10;From Location L&#13;&#10;Join Outlet O  on O.LocationId=L.Id">
+        <Column Name="LocationName" DataType="System.String"/>
+        <Column Name="Outletname" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Parameter Name="locationParam" DataType="System.Int64"/>
+  </Dictionary>
+  <ReportPage Name="Location">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="56.7">
+      <TextObject Name="Text4" Left="255.15" Top="9.45" Width="255.15" Height="28.35" Text="LOCATION LIST" Font="Arial, 20pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="60.7" Width="718.2" Height="37.8">
+      <TextObject Name="Text5" Left="122.85" Top="9.45" Width="264.6" Height="18.9" Fill.Color="Gainsboro" Text="Location Name" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text6" Left="387.45" Top="9.45" Width="151.2" Height="18.9" Fill.Color="Gainsboro" Text="Outlet Name" Font="Arial, 10pt, style=Bold"/>
+    </PageHeaderBand>
+    <GroupHeaderBand Name="GroupHeader1" Top="102.5" Width="718.2" Height="18.9" Condition="[OutletLocation.LocationName]">
+      <TextObject Name="Text7" Left="122.85" Width="132.3" Height="18.9" Text="[OutletLocation.LocationName]"/>
+      <DataBand Name="Data1" Top="125.4" Width="718.2" Height="18.9" CanGrow="true" FirstRowStartsNewPage="true">
+        <TextObject Name="Text2" Left="387.45" Width="132.3" Height="18.9" Text="[OutletLocation.Outletname]"/>
+      </DataBand>
+      <GroupFooterBand Name="GroupFooter1" Top="148.3" Width="718.2" Height="18.9" CanBreak="true"/>
+    </GroupHeaderBand>
+    <PageFooterBand Name="PageFooter1" Top="171.2" Width="718.2" Height="18.9">
+      <TextObject Name="Text3" Left="548.1" Width="160.65" Height="18.9" Text="Powered By Merkato"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>
